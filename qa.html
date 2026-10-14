@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>graba.me · QA for music &amp; art software</title>
+  <meta name="description" content="Testing for music and art apps, plugins and creative tools: audio timing, MIDI, plugin hosts, browser audio and mobile. Bug reports with steps to reproduce, and automated test suites you keep.">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://graba.me/qa.html">
+  <meta property="og:title" content="graba.me · QA for music &amp; art software">
+  <meta property="og:description" content="Your app is growing fast. Let me find what breaks before your users do.">
+  <meta property="og:image" content="https://graba.me/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <nav aria-label="Main">
+      <a href="index.html" class="brand">
+        <svg class="brand-mark" viewBox="0 0 400 400" aria-hidden="true">
+          <ellipse cx="150" cy="88" rx="46" ry="24" fill="#6B8F5C" transform="rotate(-35 150 88)"></ellipse>
+          <ellipse cx="252" cy="82" rx="40" ry="21" fill="#C65D3B" transform="rotate(38 252 82)"></ellipse>
+          <circle cx="200" cy="220" r="110" fill="#7A5C3E"></circle>
+          <circle cx="200" cy="220" r="62" fill="#6B8F5C"></circle>
+          <circle cx="200" cy="220" r="22" fill="#F4D477"></circle>
+        </svg>
+        graba.me
+      </a>
+      <div class="nav-links">
+        <a href="#breaks">What I test</a>
+        <a href="#offers">Offers</a>
+        <a href="#proof">Background</a>
+        <a href="index.html">For artists</a>
+        <a href="#contact" class="nav-cta">Get a release check</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero dev" id="top">
+      <p class="eyebrow">QA for music &amp; art software</p>
+      <h1>Your app is growing fast. Let me find what breaks before your users do.</h1>
+      <p class="tagline">Testing for music apps, plugins and creative tools, from someone who has spent 20+ years breaking software across every kind of industry.</p>
+      <p class="where">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        San Diego · working remotely with teams anywhere
+      </p>
+      <a href="#contact" class="cta">Get a release check</a>
+    </section>
+
+    <section id="breaks">
+      <h2>Where creative software breaks</h2>
+      <p class="section-lead">Generic QA and AI-written tests rarely check these. Your users find them on stage, mid-session or on release day.</p>
+      <div class="break-grid">
+        <div class="break"><h3>MIDI</h3><p>Devices plugged in or pulled out mid-session, clock sync, channel and note edge cases.</p></div>
+        <div class="break"><h3>Browser audio</h3><p>Autoplay rules, suspended audio contexts, Safari quirks, background tabs.</p></div>
+        <div class="break"><h3>Mobile interruptions</h3><p>Phone calls, Bluetooth headphones, switching output devices, the app going to the background.</p></div>
+        <div class="break"><h3>Offline and flaky networks</h3><p>Shows, studios and basements with bad signal. What still works, and what fails quietly.</p></div>
+      </div>
+      <p class="break-note">Plus the usual: sign-ups, payments, forms, accessibility, across browsers and devices.<br>Audio timing, sample rates, plugin hosts and file handling: on request.</p>
+    </section>
+
+    <section id="offers">
+      <h2>Offers</h2>
+      <p class="section-lead">Fixed scope, price agreed before any testing starts.</p>
+      <div class="services-grid">
+        <article class="service-card">
+          <div class="icon ember">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11l2 2 4-4"/><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/></svg>
+          </div>
+          <h3>Release Check</h3>
+          <p class="summary">One build, tested before you ship it.</p>
+          <ul>
+            <li><strong>Smoke:</strong> install on your platforms, launch, play a few notes, click through the UI</li>
+            <li><strong>Acceptance:</strong> test plan, exploratory and scripted testing, bug report with steps and evidence, and a ranked list of what to fix</li>
+          </ul>
+          <div class="price-block">
+            <p class="price"><span data-price="qa.release_check">From $500</span>
+              <span class="price-note">Smoke: $500 for 1 platform, +$200 each extra · Acceptance: from $1,500 for small apps (about one screen and a couple of menus)</span>
+            </p>
+            <a href="#contact" class="card-link">Start this →</a>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="icon moss">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5"/></svg>
+          </div>
+          <h3>Test Suite Setup</h3>
+          <p class="summary">My automation framework, packaged in a container for your app.</p>
+          <ul>
+            <li>Containerized framework set up for your app</li>
+            <li>Smoke and regression tests for the flows that matter most</li>
+            <li>Run it on its own or wire it into your CI: your choice</li>
+            <li>Handed over with docs, so your team can run and extend it</li>
+          </ul>
+          <div class="price-block">
+            <p class="price"><span data-price="qa.test_suite_setup">From $2,500</span>
+              <span class="price-note">1 platform · any 2 for $4,500 · all 3 for $6,500 (web, mobile, desktop)</span>
+            </p>
+            <a href="#contact" class="card-link">Start this →</a>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="icon walnut">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 12a8 8 0 1 1-2.3-5.7"/><path d="M20 4v5h-5"/></svg>
+          </div>
+          <h3>Ongoing QA</h3>
+          <p class="summary">A smoke check on every release.</p>
+          <ul>
+            <li>Install, launch, play and a UI pass on each release</li>
+            <li>Bug report for anything that breaks</li>
+            <li>Up to 2 releases a month</li>
+          </ul>
+          <div class="price-block">
+            <p class="price"><span data-price="qa.ongoing_qa_monthly">$500</span>/month
+              <span class="price-note">+$250 per extra release</span>
+            </p>
+            <a href="#contact" class="card-link">Start this →</a>
+          </div>
+        </article>
+      </div>
+
+      <article class="sample-log" aria-label="Example bug report">
+        <header>
+          <h3>Bug report</h3>
+          <span class="badge">Example</span>
+        </header>
+        <dl>
+          <dt>Title</dt><dd>Playback stops when switching to Bluetooth headphones mid-song</dd>
+          <dt>Severity</dt><dd><span class="sev">High</span> blocks playback, no error shown</dd>
+          <dt>Steps</dt><dd>1. Start any track on speakers · 2. Connect Bluetooth headphones · 3. Press play again</dd>
+          <dt>Expected</dt><dd>Playback continues on the headphones</dd>
+          <dt>Actual</dt><dd>Silent; play button shows "playing"; reload needed</dd>
+          <dt>Environment</dt><dd>Chrome on Android · web build from your staging link</dd>
+          <dt>Evidence</dt><dd>Screen recording, console log</dd>
+        </dl>
+      </article>
+
+      <article class="audit-example" aria-label="Example visual audit">
+        <header>
+          <h3>Visual audit</h3>
+          <span class="badge">Example</span>
+        </header>
+        <p class="audit-meta">This page at 5 screen sizes, from phone to desktop: correct title, no sideways scrolling, no forms, exactly one email link. 40 checks, all passed.</p>
+        <div class="audit-shots">
+          <figure><img src="examples/visual-audit/dev-hero-mobile.png" alt="This page on a phone, 390 pixels wide" loading="lazy" width="390" height="844"><figcaption>Phone · 390px</figcaption></figure>
+          <figure><img src="examples/visual-audit/dev-hero-tablet-portrait.png" alt="This page on a tablet, 768 pixels wide" loading="lazy" width="768" height="1024"><figcaption>Tablet · 768px</figcaption></figure>
+          <figure class="wide"><img src="examples/visual-audit/dev-hero-desktop.png" alt="This page on a desktop screen, 1920 pixels wide" loading="lazy" width="1920" height="1080"><figcaption>Desktop · 1920px</figcaption></figure>
+        </div>
+        <figure class="audit-video">
+          <video src="examples/visual-audit/dev-page-mobile.webm" poster="examples/visual-audit/dev-hero-mobile.png" controls muted playsinline preload="metadata" width="390" height="844"></video>
+          <figcaption>Recording of the phone run · <a href="examples/visual-audit/dev-page-mobile.webm">download</a></figcaption>
+        </figure>
+      </article>
+    </section>
+
+    <section id="how">
+      <h2>How it works</h2>
+      <ol class="steps">
+        <li><h3>Send the build</h3><p>A link or build, and what worries you most about it.</p></li>
+        <li><h3>Plan and price</h3><p>A short test plan and a fixed price before any testing starts.</p></li>
+        <li><h3>Testing</h3><p>On the platforms we agreed, with updates as serious bugs turn up.</p></li>
+        <li><h3>Report and handover</h3><p>Bugs with steps to reproduce, and any tests I wrote, documented and yours to keep.</p></li>
+      </ol>
+    </section>
+
+    <!-- CASE STUDIES: remove `hidden` once the first test suites and write-ups are published. -->
+    <section id="cases" hidden>
+      <h2>Case studies</h2>
+      <div class="work-grid">
+        <div class="work-tile">[Mitheren: test suite + report]</div>
+        <div class="work-tile">[Album site: test suite + report]</div>
+        <div class="work-tile">[Open-source music app: findings write-up]</div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Get a release check</h2>
+      <p class="section-lead">Email me about your app. You'll get a reply with questions, or a test plan and price.</p>
+      <div class="project-form contact-card">
+        <div>
+          <p class="hint">Worth including in your email:</p>
+          <ul class="include-list">
+            <li>App name and a link to the app, site or repo</li>
+            <li>Platforms: web, mobile, desktop</li>
+            <li>Which offer, if you know</li>
+            <li>What worries you most about it, and your next release date</li>
+          </ul>
+        </div>
+        <a href="mailto:grabame@proton.me?subject=Release%20check" class="cta">Email grabame@proton.me</a>
+      </div>
+    </section>
+
+    <section id="proof">
+      <h2>Background</h2>
+      <p class="section-lead">I'm a music and technology enthusiast who has been testing software across all industries for quite some time, engineering ways to break software before your users do. Most recently, I took a kiosk live from scratch on my own automation framework.</p>
+      <p class="portfolio-cta"><a href="https://fernando-dz.github.io/" class="cta secondary">Engineering portfolio →</a> <a href="https://www.linkedin.com/in/fernando-diaz-29627a4/" class="cta secondary">LinkedIn →</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>
+        <p class="small">San Diego, CA · remote worldwide</p>
+        <p class="small">&copy; 2026 Fernando Diaz</p>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">For artists</a>
+        <a href="https://github.com/fernando-dz/">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

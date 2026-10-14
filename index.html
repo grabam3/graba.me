@@ -3,16 +3,26 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="graba.me — audio engineering, studio setup, collaborations, NFC and tools for artists. Prices up front; every job is logged and handed over.">
-  <title>graba.me</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>graba.me · Rig checks, studio builds &amp; music tech in San Diego</title>
+  <meta name="description" content="Hands-on studio setup, troubleshooting and music tech for artists in San Diego, or anywhere over video. Prices up front. Every session logged, every file handed over.">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://graba.me/">
+  <meta property="og:title" content="graba.me · Rig checks, studio builds &amp; music tech in San Diego">
+  <meta property="og:description" content="Hands-on studio setup, troubleshooting and music tech for artists. Every session logged, every file handed over.">
+  <meta property="og:image" content="https://graba.me/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
   <header>
-    <nav>
+    <nav aria-label="Main">
       <a href="#top" class="brand">
         <svg class="brand-mark" viewBox="0 0 400 400" aria-hidden="true">
           <ellipse cx="150" cy="88" rx="46" ry="24" fill="#6B8F5C" transform="rotate(-35 150 88)"></ellipse>
@@ -25,15 +35,16 @@
       </a>
       <div class="nav-links">
         <a href="#services">Services</a>
-        <a href="#how">How we work</a>
-        <a href="#start">Start a project</a>
+        <a href="#how">How it works</a>
+        <a href="qa.html">For developers</a>
+        <a href="#start" class="nav-cta">Start a project</a>
       </div>
     </nav>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <svg class="hero-mark" viewBox="0 0 400 400" aria-label="graba.me mark">
+  <main id="main">
+    <section class="hero" id="top">
+      <svg class="hero-mark" viewBox="0 0 400 400" role="img" aria-label="graba.me mark">
         <ellipse cx="150" cy="88" rx="46" ry="24" fill="#6B8F5C" transform="rotate(-35 150 88)"></ellipse>
         <ellipse cx="252" cy="82" rx="40" ry="21" fill="#C65D3B" transform="rotate(38 252 82)"></ellipse>
         <circle cx="200" cy="220" r="110" fill="#7A5C3E"></circle>
@@ -41,202 +52,215 @@
         <circle cx="200" cy="220" r="22" fill="#F4D477"></circle>
       </svg>
       <h1>Record it. Log it. Keep it.</h1>
-      <p class="tagline">Audio engineering, studio setup, collaborations, NFC and tools for artists.</p>
+      <p class="tagline">Hands-on studio setup, troubleshooting and music tech for artists. Every session logged, every file handed over.</p>
+      <p class="where">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+        San Diego, in person · anywhere else over video
+      </p>
       <a href="#start" class="cta">Start a project</a>
+    </section>
+
+    <!-- WORK: remove the `hidden` attribute once the clips, photos and demo are in. -->
+    <section id="work" hidden>
+      <h2>Recent work</h2>
+      <p class="section-lead">A few things I've recorded, wired up and built.</p>
+      <div class="work-grid">
+        <div class="work-tile">[Audio clip: before / after]</div>
+        <div class="work-tile">[Photo: a studio setup]</div>
+        <div class="work-tile">[Video: Mitheren demo]</div>
+        <div class="work-tile">[Link: sample album site]</div>
+      </div>
+      <blockquote class="quote">
+        <p>“[Quote from a client or collaborator, used with their permission]”</p>
+        <cite>[Name, role]</cite>
+      </blockquote>
     </section>
 
     <section id="services">
       <h2>Services</h2>
-      <div class="services-grid">
-        <div class="service-card">
-          <div class="icon-dot" style="background:#6B8F5C;"></div>
-          <h3>Audio Engineering &amp; Production Help</h3>
-          <p>In person, hands-on, on your gear.</p>
-          <ul>
-            <li>Computer setup for audio: Linux, Windows or macOS, installed and configured</li>
-            <li>DAWs and plugins installed and working</li>
-            <li>Live recording hardware wired up, with the signal flow worked out for your setup</li>
-            <li>Workflows that fit how you make music</li>
-            <li>Cassette 4-track and reel-to-reel recording (bring your reel)</li>
-            <li>Portable recording, up to 6 inputs at once</li>
-          </ul>
-          <p class="price">Setup $65–75/hr + travel · recording 2 hrs from $430</p>
+      <p class="section-lead">Prices up front. In person around San Diego (travel billed at cost), or over video from anywhere.</p>
+
+      <div class="service-group">
+        <h3 class="group-label">For your sessions</h3>
+        <article class="service-card featured">
+            <div class="icon moss">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M5 4v16M12 4v16M19 4v16"/><rect x="3" y="7" width="4" height="3" rx="1" fill="currentColor"/><rect x="10" y="13" width="4" height="3" rx="1" fill="currentColor"/><rect x="17" y="9" width="4" height="3" rx="1" fill="currentColor"/></svg>
+            </div>
+            <h3>Rig Check</h3>
+            <p class="summary">Your music and art computer, set up right and proven to work. In person or over video.</p>
+            <div class="feature-cols">
+              <ul>
+                <li>Computers set up for music and art: Linux, Windows or macOS</li>
+                <li>DAWs, plugins and creative apps installed and working</li>
+                <li>Troubleshooting: crashes, latency, dropouts, drivers, plugins that won't load</li>
+                <li>Workflow review: find what slows you down and redesign it, or test new tools before you commit to them</li>
+              </ul>
+              <ul>
+                <li>Recording hardware wired up, with the signal flow mapped for your room</li>
+                <li>Tracking on cassette 4-track, reel-to-reel or portable rig (up to 6 inputs). Tracking only; no mixing or mastering.</li>
+                              </ul>
+            </div>
+            <div class="price-block">
+              <p class="price">$65–75/hr
+                <span class="price-note">Tracking sessions: 2 hours from $430 · travel billed at cost</span>
+              <span class="price-note">Rather do it yourself? Advice-only over video, same rate · free 20-minute intro · 33% off your first 2 hours</span>
+              </p>
+              <a href="#start" class="card-link">Start this →</a>
+            </div>
+          </article>
+        
+      </div>
+
+      <div class="service-group">
+        <h3 class="group-label">For your release</h3>
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="icon ember">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
+            </div>
+            <h3>Album Sites</h3>
+            <p class="summary">Your release as a playable page that runs from a phone or laptop. No internet, no app, no sign-up.</p>
+            <ul>
+              <li>Header, artwork and track list; every track plays in the browser</li>
+              <li>Plays straight from a folder of audio files</li>
+              <li>Listeners join the device's Wi-Fi hotspot and press play</li>
+              <li><strong>Artists:</strong> your release at shows and the merch table</li>
+              <li><strong>Venues:</strong> let guests play local music on site</li>
+            </ul>
+            <div class="price-block">
+              <p class="price">$300–600
+                <span class="price-note">Add NFC cards for +$20</span>
+              </p>
+              <a href="#start" class="card-link">Start this →</a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="icon moss">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M11 18h2"/><path d="M19.5 8a5 5 0 0 1 0 6M21.5 6a8 8 0 0 1 0 10"/></svg>
+            </div>
+            <h3>Merch &amp; Extras</h3>
+            <p class="summary">NFC cards, posters and merch that open your music on a phone.</p>
+            <ul>
+              <li>NFC cards that open a release or playlist: $50–100</li>
+              <li>Posters and flyers that open a video or page: $100–200 each</li>
+              <li>NFC-tagged merch (stickers, keychains, apparel): $200–600</li>
+            </ul>
+            <div class="price-block">
+              <p class="price">Starter bundle $150–200</p>
+              <a href="#start" class="card-link">Start this →</a>
+            </div>
+          </article>
         </div>
-        <div class="service-card">
-          <div class="icon-dot" style="background:#C65D3B;"></div>
-          <h3>Collaborations &amp; Splits</h3>
-          <ul>
-            <li>One part on your track (drum machine, synth, sampler): $150–300 per song</li>
-            <li>Full track production: $800–1,500 per track</li>
-            <li>Fee + split: from $400 per track + 3 points</li>
-            <li>Split only: by application</li>
-          </ul>
-          <p class="price">Split sheet signed at the session</p>
+      </div>
+
+      <div class="service-group">
+        <h3 class="group-label">Tools I've built</h3>
+        <div class="tools-grid">
+          <div class="tool">
+            <div class="icon walnut">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="6" width="19" height="12" rx="1.5"/><path d="M7 6v7M12 6v7M17 6v7"/></svg>
+            </div>
+            <div>
+              <h3>Mitheren</h3>
+              <p>Play a keyboard drawn on any flat surface, using a camera. Works in desktop browsers.</p>
+            </div>
+          </div>
+          <div class="tool">
+            <div class="icon walnut">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h9l3 3v15H6z"/><path d="M9 11h6M9 14h6M9 17h4"/></svg>
+            </div>
+            <div>
+              <h3>Keyboard overlays</h3>
+              <p>Printable scale and chord guides cut to your controller's key spacing. Made for the Akai MPK Mini and Novation Bass Station 25.</p>
+            </div>
+          </div>
         </div>
-        <div class="service-card">
-          <div class="icon-dot" style="background:#7A5C3E;"></div>
-          <h3>NFC</h3>
-          <p>NFC solutions for your content, your workflows, or just merch.</p>
-          <ul>
-            <li>Tap-to-play cards for a release or playlist: $50–100</li>
-            <li>Posters and flyers that open a video or page: $100–200 each</li>
-            <li>Tagged merch (stickers, keychains, apparel): $200–600</li>
-          </ul>
-          <p class="price">Starter bundle $150–200</p>
-        </div>
-        <div class="service-card">
-          <div class="icon-dot" style="background:#6B8F5C;"></div>
-          <h3>Consulting</h3>
-          <p>Advice, not hands-on: you do the work, we guide it.</p>
-          <ul>
-            <li>Gear, recording, arrangement and workflow questions</li>
-            <li>Online or in person</li>
-            <li>First 2 hours 33% off, up to 3 sessions</li>
-          </ul>
-          <p class="price">$65–75/hr · 20-minute intro call free</p>
-        </div>
-        <div class="service-card">
-          <div class="icon-dot" style="background:#C65D3B;"></div>
-          <h3>Album Sites</h3>
-          <p>Your music as a playable album page, served from a phone or laptop. No internet needed.</p>
-          <ul>
-            <li>Header, artwork and track list; every track plays in the browser</li>
-            <li>Plays straight from a folder of audio files</li>
-            <li>Listeners join the device's Wi-Fi hotspot; nobody logs on to anything</li>
-            <li><strong>Artists:</strong> your release at shows and the merch table</li>
-            <li><strong>Venue owners:</strong> local music guests can play on site</li>
-          </ul>
-          <p class="price">$300–600 · NFC tap cards +$20 with a site</p>
-        </div>
-        <div class="service-card">
-          <div class="icon-dot" style="background:#7A5C3E;"></div>
-          <h3>Software &amp; Tools</h3>
-          <ul>
-            <li><strong>Mitheren</strong>: play a keyboard drawn on any flat surface, using a camera. Works in desktop browsers.</li>
-            <li><strong>Keyboard overlays</strong>: printable scale and chord guides cut to your controller's key spacing. Built for the Akai MPK Mini and Novation Bass Station 25.</li>
-          </ul>
-          <p class="price">Custom tools quoted per project</p>
-        </div>
+        <p class="tools-note">Need a custom tool? <a href="#start" class="card-link">Tell me about it →</a></p>
       </div>
     </section>
 
     <section id="how">
-      <h2>How we work</h2>
-      <ul class="how-list">
-        <li>Everything gets logged: settings, routing, takes, patch backups.</li>
-        <li>You leave with the files and the notes to do it again.</li>
-        <li>Splits and agreements are written down before the song leaves the room.</li>
-        <li>We work alongside you, on your gear or ours.</li>
-      </ul>
+      <h2>How it works</h2>
+      <p class="section-lead">You leave with the files and the notes to do it again without me.</p>
+      <ol class="steps">
+        <li><h3>Free intro call</h3><p>20 minutes to hear what you want at the end and check your gear.</p></li>
+        <li><h3>Price in writing</h3><p>Small jobs get booked at the listed rate. Bigger ones get a written scope and quote first.</p></li>
+        <li><h3>Session</h3><p>We work side by side on your gear or mine, in person or over video.</p></li>
+        <li><h3>Log and handover</h3><p>What changed, how it was tested and how to undo it, written down and handed to you with the files.</p></li>
+      </ol>
+
+      <article class="sample-log" aria-label="Example session log">
+        <header>
+          <h3>Session log</h3>
+          <span class="badge">Example</span>
+        </header>
+        <dl>
+          <dt>Problem</dt><dd>Audio drops out when recording 4 tracks at once</dd>
+          <dt>Found</dt><dd>Interface shares a USB hub with the webcam · buffer at 64 samples</dd>
+          <dt>Changed</dt><dd>Interface moved to its own port · buffer 256 · power saving off</dd>
+          <dt>Verified</dt><dd>30-min 4-track test recording, 0 dropouts</dd>
+          <dt>Handed over</dt><dd>Settings sheet, how to undo each change, this log</dd>
+        </dl>
+      </article>
     </section>
 
     <section id="start">
       <h2>Start a project</h2>
-      <form id="project-form" class="project-form" action="https://api.web3forms.com/submit" method="POST">
-        <!-- Web3Forms access key (free at web3forms.com, sent to grabame@proton.me) -->
-        <input type="hidden" name="access_key" value="fa7c816c-14e0-4068-96fe-30d50a3e560d">
-        <input type="hidden" name="subject" value="New graba.me project">
-        <input type="hidden" name="from_name" value="graba.me">
-        <input type="hidden" name="size" id="size-field" value="">
-        <input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off">
-
-        <fieldset class="scope-check">
-          <legend>Quick scope check</legend>
-          <p class="hint">Five yes/no questions decide the next step.</p>
-          <label><input type="checkbox" class="scope"> It's one service from the list above</label>
-          <label><input type="checkbox" class="scope"> I know the one thing I want at the end</label>
-          <label><input type="checkbox" class="scope"> It fits in one session (about 2–4 hours)</label>
-          <label><input type="checkbox" class="scope"> My gear and files are ready</label>
-          <label><input type="checkbox" class="scope"> It doesn't need access to my accounts or private data</label>
-          <p id="scope-result" class="scope-result" aria-live="polite"></p>
-        </fieldset>
-
-        <div class="fields">
-          <label>Name <input type="text" name="name" required></label>
-          <label>Email <input type="email" name="email" required></label>
-          <label>Service
-            <select name="service" required>
-              <option value="">Choose one</option>
-              <option>Audio Engineering &amp; Production Help</option>
-              <option>Collaborations &amp; Splits</option>
-              <option>NFC</option>
-              <option>Consulting</option>
-              <option>Album Sites</option>
-              <option>Software &amp; Tools</option>
-              <option>More than one</option>
-            </select>
-          </label>
-          <label>What do you need? <textarea name="details" rows="4" required></textarea></label>
-
-          <div id="project-fields" class="project-fields">
-            <label>Gear, files or links we should know about <textarea name="gear_and_links" rows="3"></textarea></label>
-            <label>Deadline <input type="text" name="deadline" placeholder="e.g. release on March 1"></label>
-            <label>Budget range
-              <select name="budget">
-                <option value="">Choose one</option>
-                <option>Under $500</option>
-                <option>$500–1,500</option>
-                <option>$1,500–5,000</option>
-                <option>$5,000+</option>
-                <option>Split / not sure yet</option>
-              </select>
-            </label>
-          </div>
-
-          <label id="times-field">Good times for the free 20-minute call <input type="text" name="call_times" placeholder="e.g. weekday evenings"></label>
+      <p class="section-lead">Email me what you need. I'll reply to set up a free 20-minute call.</p>
+      <div class="project-form contact-card">
+        <details class="scope-check">
+          <summary>Quick scope check <span>(optional, nothing is sent)</span></summary>
+          <fieldset>
+            <legend class="hint">Tick everything that's true.</legend>
+            <label><input type="checkbox" class="scope"> It's one service from the list above</label>
+            <label><input type="checkbox" class="scope"> I know the one thing I want at the end</label>
+            <label><input type="checkbox" class="scope"> It fits in one session (about 2–4 hours)</label>
+            <label><input type="checkbox" class="scope"> My gear and files are ready</label>
+            <label><input type="checkbox" class="scope"> It doesn't need access to my accounts or private data</label>
+            <p id="scope-result" class="scope-result" aria-live="polite"></p>
+          </fieldset>
+        </details>
+        <div>
+          <p class="hint">Worth including in your email:</p>
+          <ul class="include-list">
+            <li>Which service, and what you want at the end</li>
+            <li>Your gear, files or links</li>
+            <li>Deadline and rough budget</li>
+          </ul>
         </div>
-
-        <button type="submit" class="cta">Send</button>
-        <p id="form-status" class="form-status" aria-live="polite"></p>
-      </form>
+        <a href="mailto:grabame@proton.me?subject=graba.me%20project" class="cta">Email grabame@proton.me</a>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p><a href="mailto:grabame@proton.me">grabame@proton.me</a> · &copy; 2026 graba.me</p>
+    <div class="footer-inner">
+      <div>
+        <p class="small">San Diego, CA · in person locally, over video anywhere</p>
+        <p class="small">&copy; 2026 Fernando Diaz</p>
+      </div>
+      <div class="footer-links">
+        <a href="#start">Start a project</a>
+        <a href="qa.html">QA for developers</a>
+        <a href="https://fernando-dz.github.io/">Engineering portfolio</a>
+        <a href="https://www.linkedin.com/in/fernando-diaz-29627a4/">LinkedIn</a>
+        <!-- Add Instagram / Bandcamp / SoundCloud here when ready -->
+      </div>
+    </div>
   </footer>
 
   <script>
-    // Scope check: all five ticked = small job (intro call, then book the session);
-    // anything unticked = project (full form, written scope and quote).
+    // Scope check runs in the browser only; nothing is sent anywhere.
     const boxes = document.querySelectorAll(".scope");
     const result = document.getElementById("scope-result");
-    const sizeField = document.getElementById("size-field");
-    const projectFields = document.getElementById("project-fields");
-    const timesField = document.getElementById("times-field");
-
     function updateScope() {
       const small = [...boxes].every((b) => b.checked);
-      sizeField.value = small ? "small" : "project";
-      projectFields.hidden = small;
-      timesField.hidden = !small;
       result.textContent = small
-        ? "Small job: send this, we'll set up the free 20-minute call, then you book the session at the listed price."
-        : "Project: tell us more below and you'll get a written scope and quote before any call.";
+        ? "Small job: email me to book the free 20-minute call, then the session at the listed price."
+        : "Bigger job: email me the details and you'll get a written scope and quote first.";
     }
     boxes.forEach((b) => b.addEventListener("change", updateScope));
-    updateScope();
-
-    const form = document.getElementById("project-form");
-    const status = document.getElementById("form-status");
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      if (form.access_key.value === "WEB3FORMS_ACCESS_KEY") {
-        status.textContent = "The form isn't connected yet. Email grabame@proton.me for now.";
-        return;
-      }
-      status.textContent = "Sending…";
-      try {
-        const res = await fetch(form.action, { method: "POST", body: new FormData(form) });
-        const data = await res.json();
-        status.textContent = data.success
-          ? "Sent. You'll get a reply by email."
-          : "That didn't go through. Email grabame@proton.me instead.";
-        if (data.success) form.reset(), updateScope();
-      } catch {
-        status.textContent = "That didn't go through. Email grabame@proton.me instead.";
-      }
-    });
   </script>
 </body>
 </html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>graba.me — NFC cards &amp; links</title>
+<style>
+/* Fonts bundled locally (SIL Open Font License, see fonts/OFL-*.txt); no outside loads */
+@font-face{font-family:"Baloo 2";font-style:normal;font-weight:400 800;font-display:swap;src:url("fonts/baloo2-latin.woff2") format("woff2")}
+@font-face{font-family:"Cabin";font-style:normal;font-weight:400 700;font-display:swap;src:url("fonts/cabin-latin.woff2") format("woff2")}
+</style>
+<style>
+:root{
+  --cream:#fbf3e3; --yellow:#f4d477; --terra:#b04f30; --terra-dk:#8f3f26;
+  --ink:#3d3226; --muted:#6a5238; --line:rgba(61,50,38,.16);
+  --display:"Baloo 2","Poppins","Nunito","Trebuchet MS",system-ui,sans-serif;
+  --body:"Cabin","Poppins","Nunito","Trebuchet MS",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){ --cream:#2a2219; --ink:#f6ead2; --muted:#d3bf9d; --line:rgba(246,234,210,.2); --terra:#e0845f; --terra-dk:#f0a283; }
+}
+*{box-sizing:border-box}
+html{ background:var(--cream); -webkit-print-color-adjust:exact; print-color-adjust:exact; scroll-padding-top:env(safe-area-inset-top,0px);}
+body{margin:0; background:var(--cream); color:var(--ink); font-family:var(--body); font-size:17px; line-height:1.5;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--terra); outline-offset:3px; border-radius:6px}
+.wrap{max-width:1000px; margin:0 auto; padding:0 24px}
+/* nav */
+.nav{border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:64px}
+.brand{display:flex; align-items:center; gap:10px; text-decoration:none; font-family:var(--display); font-weight:800; font-size:1.5rem; letter-spacing:-.01em}
+.brand .logo{width:24px; height:auto}
+.nav-actions{display:flex; align-items:center; gap:18px}
+.langlink{font-weight:600; text-decoration:none; padding:6px 2px; border-bottom:2px solid transparent}
+.langlink:hover{border-bottom-color:var(--terra)}
+.btn{display:inline-block; background:var(--terra); color:#fff8ee; font-family:var(--body); font-weight:700; text-decoration:none; padding:13px 26px; border-radius:999px; line-height:1.1}
+.btn:hover{background:var(--terra-dk)}
+.btn.sm{padding:11px 20px; font-size:.95rem}
+/* hero */
+.hero{background:var(--yellow); color:#3d3226; text-align:center; padding:56px 0 60px}
+.hero .logo{width:68px; height:auto; display:block; margin:0 auto 22px}
+.hero h1{font-family:var(--display); font-weight:800; font-size:clamp(2.2rem,6.4vw,3.6rem); line-height:1.08; margin:0 auto 16px; letter-spacing:-.01em}
+.hero p.lead{max-width:34ch; margin:0 auto 18px; font-size:1.15rem; color:#5a4630}
+.hero .place{font-size:.92rem; font-weight:600; color:#5a4630; margin:0 0 26px}
+/* sections */
+section.block{padding:54px 0 6px}
+section.block h2{font-family:var(--display); font-weight:800; font-size:clamp(1.7rem,4.6vw,2.2rem); text-align:center; margin:0 0 6px; line-height:1.15}
+section.block .intro{text-align:center; color:var(--muted); margin:0 auto 26px; max-width:52ch}
+.rows{border-top:1px solid var(--line)}
+.row{display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,2.2fr) minmax(0,1fr) 7.8rem; column-gap:22px; align-items:baseline; padding:15px 4px; border-bottom:1px solid var(--line); break-inside:avoid}
+.row.nometa{grid-template-columns:minmax(0,1.15fr) minmax(0,3.2fr) 7.8rem}
+.row .n{font-family:var(--display); font-weight:700; font-size:1.12rem; line-height:1.25}
+.row .d{color:var(--muted)}
+.row .m{font-size:.92rem; color:var(--muted); font-weight:600}
+.row .p{font-family:var(--display); font-weight:800; font-size:1.15rem; color:var(--terra); white-space:nowrap; text-align:right}
+.note{break-inside:avoid; orphans:3; widows:3; margin:18px 4px 0; color:var(--muted); font-size:.98rem; max-width:70ch}
+.note strong{color:var(--ink)}
+/* closing */
+.closing{background:var(--yellow); color:#3d3226; text-align:center; padding:48px 0 52px; margin-top:60px; break-inside:avoid}
+.closing h2{font-family:var(--display); font-weight:800; font-size:clamp(1.7rem,4.6vw,2.2rem); margin:0 0 8px}
+.closing p{margin:0 auto 22px; max-width:40ch; color:#5a4630; font-size:1.08rem}
+.closing .mail{display:block; margin-top:16px; font-weight:700; font-size:1.05rem; color:#3d3226}
+.foot{padding:20px 0 28px; text-align:center; font-size:.9rem; color:var(--muted)}
+/* mobile: rows stack */
+@media (max-width:700px){
+  body{font-size:16px}
+  .wrap{padding:0 18px}
+  .nav .wrap{min-height:58px}
+  .brand{font-size:1.3rem}
+  .nav-actions{gap:12px}
+  .nav .btn{display:none}
+  .hero{padding:42px 0 46px}
+  .row,.row.nometa{grid-template-columns:minmax(0,1fr) auto; row-gap:4px; padding:14px 2px}
+  .row .d{grid-column:1 / -1; grid-row:2}
+  .row .m{grid-column:1 / -1; grid-row:3; font-size:.88rem}
+  .row .p{grid-column:2; grid-row:1}
+  .row .m:empty{display:none}
+}
+/* screen: the spacer table is invisible plumbing */
+.paper,.paper thead,.paper tfoot,.paper tbody,.paper tr,.paper td{display:block; padding:0; border:0; width:100%}
+.paper .sp{display:none}
+/* print / PDF */
+@page{ size:Letter; margin:0 }
+@media print{
+  html,body{background:var(--cream)}
+  .paper{display:table; border-collapse:collapse; width:100%}
+  .paper thead{display:table-header-group}
+  .paper tfoot{display:table-footer-group}
+  .paper tbody{display:table-row-group}
+  .paper tr{display:table-row}
+  .paper td{display:table-cell}
+  .paper .sp{display:block}
+  .sp-top{height:12mm}
+  .sp-bot{height:14mm}
+  .row{padding:8px 4px}
+  .row .n{font-size:1.02rem}
+  .row .d{font-size:.95rem}
+  .row .m{font-size:.85rem}
+  .nav-actions{display:none}
+  .nav .wrap{min-height:52px}
+  .hero{padding:26px 0 30px}
+  .hero .logo{width:60px; margin-bottom:16px}
+  section.block{padding-top:26px}
+  section.block h2{break-after:avoid}
+  section.block .intro{break-after:avoid; break-inside:avoid; orphans:3; widows:3}
+  .closing{margin-top:26px; padding:34px 0 38px}
+  body{font-size:14.5px}
+  .wrap{padding:0 34px}
+  section.block .intro{margin-bottom:16px}
+}
+@media (prefers-reduced-motion:no-preference){ html{scroll-behavior:smooth} }
+</style>
+</head>
+<body>
+<table class="paper"><thead><tr><td><div class="sp sp-top"></div></td></tr></thead><tfoot><tr><td><div class="sp sp-bot"></div></td></tr></tfoot><tbody><tr><td>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="../" id="top"><svg class="logo" viewBox="95 50 300 375" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<ellipse cx="180" cy="102" rx="53" ry="29" transform="rotate(-25 180 102)" fill="#6b8f5c"/>
+<ellipse cx="313" cy="96" rx="45" ry="25" transform="rotate(25 313 96)" fill="#c65d3b"/>
+<circle cx="245" cy="275" r="142" fill="#7a5c3e"/>
+<circle cx="245" cy="275" r="80" fill="#6b8f5c"/>
+<circle cx="245" cy="275" r="30" fill="#f4d477"/>
+</svg><span>graba.me</span></a>
+  <div class="nav-actions">
+    <a class="langlink" href="es.html" hreflang="es">Español</a>
+    <a class="btn sm" href="mailto:grabame@proton.me?subject=NFC%20project">Start a project</a>
+  </div>
+</div></header>
+<main>
+<div class="hero"><div class="wrap">
+  <svg class="logo" viewBox="95 50 300 375" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+<ellipse cx="180" cy="102" rx="53" ry="29" transform="rotate(-25 180 102)" fill="#6b8f5c"/>
+<ellipse cx="313" cy="96" rx="45" ry="25" transform="rotate(25 313 96)" fill="#c65d3b"/>
+<circle cx="245" cy="275" r="142" fill="#7a5c3e"/>
+<circle cx="245" cy="275" r="80" fill="#6b8f5c"/>
+<circle cx="245" cy="275" r="30" fill="#f4d477"/>
+</svg>
+  <h1>NFC cards &amp; links</h1>
+  <p class="lead">Tap a card with a phone and land on your menu, your socials, your reviews or your WiFi. Prices up front.</p>
+  <p class="place">San Diego, in person · anywhere else over video</p>
+  <a class="btn" href="mailto:grabame@proton.me?subject=NFC%20project">Start a project</a>
+</div></div>
+<section class="block"><div class="wrap">
+<h2>Single cards</h2>
+<p class="intro">Just need one? One card, written to your link and tested.</p>
+<div class="rows" role="list">
+<div class="row" role="listitem"><div class="n">Review link</div><div class="d">We find your exact Google review link, write it to the card and test it</div><div class="m">1 card</div><div class="p">$20</div></div>
+<div class="row" role="listitem"><div class="n">Website / menu link</div><div class="d">Opens your website, menu or landing page</div><div class="m">1 card</div><div class="p">$15</div></div>
+<div class="row" role="listitem"><div class="n">Social links page</div><div class="d">Opens one page that lists all your social links</div><div class="m">1 card</div><div class="p">$25</div></div>
+<div class="row" role="listitem"><div class="n">Contact card (vCard)</div><div class="d">One tap offers to save your contact details</div><div class="m">1 card</div><div class="p">$20</div></div>
+<div class="row" role="listitem"><div class="n">App download</div><div class="d">Opens your app&#x27;s store page</div><div class="m">1 card</div><div class="p">$15</div></div>
+<div class="row" role="listitem"><div class="n">Event / promo link</div><div class="d">A custom URL for one campaign, discount or event</div><div class="m">1 card</div><div class="p">$15</div></div>
+<div class="row" role="listitem"><div class="n">Payment / donation link</div><div class="d">Straight to Venmo, PayPal, Square or a crypto wallet</div><div class="m">1 card</div><div class="p">$15</div></div>
+<div class="row" role="listitem"><div class="n">WiFi auto-connect</div><div class="d">Android guests tap to join your WiFi. iPhones can&#x27;t join from a tag, so ask about adding a QR code</div><div class="m">1 card</div><div class="p">$25</div></div>
+</div>
+<p class="note">Prices are per card. Need more than one? The packs below bring the price per card down a lot.</p>
+</div></section>
+<section class="block"><div class="wrap">
+<h2>Service packs</h2>
+<p class="intro">Several cards for one job. Each card opens a single link or action.</p>
+<div class="rows" role="list">
+<div class="row" role="listitem"><div class="n">Website / menu link</div><div class="d">NFC cards pointing to your website, menu or landing page</div><div class="m">10–15 cards</div><div class="p">$75–$125</div></div>
+<div class="row" role="listitem"><div class="n">Social links page</div><div class="d">One tap opens a single page that lists all your links: Instagram, TikTok, Facebook, YouTube</div><div class="m">10–15 cards</div><div class="p">$75–$125</div></div>
+<div class="row" role="listitem"><div class="n">Review link</div><div class="d">Straight to Google Reviews, Yelp or Apple Maps reviews</div><div class="m">5–10 cards</div><div class="p">$50–$100</div></div>
+<div class="row" role="listitem"><div class="n">App download</div><div class="d">Opens your app&#x27;s store page: App Store or Google Play, depending on the phone</div><div class="m">10–15 cards</div><div class="p">$75–$125</div></div>
+<div class="row" role="listitem"><div class="n">Contact card (vCard)</div><div class="d">One tap offers to save your phone, email, address and social profiles as a contact</div><div class="m">10–15 cards</div><div class="p">$60–$110</div></div>
+<div class="row" role="listitem"><div class="n">WiFi auto-connect</div><div class="d">Android guests tap the card to join your WiFi. iPhones can&#x27;t join from a tag, so ask about adding a QR code for them</div><div class="m">3–5 cards</div><div class="p">$100–$150</div></div>
+<div class="row" role="listitem"><div class="n">Event / promo link</div><div class="d">A custom URL for one campaign, discount or event</div><div class="m">10–15 cards</div><div class="p">$75–$125</div></div>
+<div class="row" role="listitem"><div class="n">Payment / donation link</div><div class="d">Straight to Venmo, PayPal, Square or a crypto wallet</div><div class="m">5–10 cards</div><div class="p">$75–$125</div></div>
+</div>
+<p class="note"><strong>Refill packs:</strong> $25–$50 per 10–15 extra cards. You pay for materials only.</p>
+</div></section>
+<section class="block"><div class="wrap">
+<h2>Packages</h2>
+<p class="intro">Bundled, so you save 10–20% compared with ordering each service separately. Each card still opens one destination; a package means several cards set up together.</p>
+<div class="rows" role="list">
+<div class="row nometa" role="listitem"><div class="n">Starter</div><div class="d">Website / menu link + social links page · 20–25 cards in total · basic branding and design · setup and testing</div><div class="p">$150–$200</div></div>
+<div class="row nometa" role="listitem"><div class="n">Growth</div><div class="d">Website + social links + reviews + app · 40+ cards split across those uses · your branding on the cards · setup, testing and documentation</div><div class="p">$250–$350</div></div>
+<div class="row nometa" role="listitem"><div class="n">Premium</div><div class="d">Every single service · 50+ cards split across all uses · premium card design and printing · NFC analytics dashboard for 3 months · 3 months of support and updates</div><div class="p">$400–$550</div></div>
+</div>
+
+</div></section>
+<section class="block"><div class="wrap">
+<h2>Website + NFC</h2>
+<p class="intro">Pair NFC with a website build for a complete digital presence.</p>
+<div class="rows" role="list">
+<div class="row nometa" role="listitem"><div class="n">Café / restaurant</div><div class="d">Website ($400–$600) + NFC menu cards ($100–$150). Customers tap at the table or the door and the menu opens.</div><div class="p">$500–$750</div></div>
+<div class="row nometa" role="listitem"><div class="n">Small business, complete</div><div class="d">Website ($400–$600) + multi-service NFC bundle ($250–$350). Site, social links, reviews and contact in one ecosystem.</div><div class="p">$650–$950</div></div>
+<div class="row nometa" role="listitem"><div class="n">Enterprise suite</div><div class="d">Custom website ($1,000+) + premium NFC ($400–$550) + monthly support ($75/mo). High-end branding, analytics, ongoing help.</div><div class="p">From $1,500</div></div>
+</div>
+
+</div></section>
+<div class="closing"><div class="wrap">
+  <h2>Ready when you are</h2>
+  <p>Tell us what you want people to land on and we&#x27;ll quote it.</p>
+  <a class="btn" href="mailto:grabame@proton.me?subject=NFC%20project">Start a project</a>
+  <a class="mail" href="mailto:grabame@proton.me">grabame@proton.me</a>
+</div></div>
+</main>
+<footer class="foot"><div class="wrap"><a href="../">graba.me</a> · San Diego · <a href="graba-me-nfc-en.pdf">Download PDF</a></div></footer>
+</td></tr></tbody></table>
+</body>
+</html>

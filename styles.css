@@ -44,6 +44,12 @@
 
 html { scroll-padding-top: 80px; }
 
+html {
+  text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+}
+
 body {
   font-family: "Karla", system-ui, sans-serif;
   background: var(--paper);
@@ -129,6 +135,8 @@ nav .brand {
 .nav-links a:hover { color: var(--ember-strong); }
 
 .nav-links .nav-cta {
+  display: inline-block;
+  white-space: nowrap;
   background: var(--ember-strong);
   color: var(--paper);
   font-weight: 700;
@@ -195,6 +203,7 @@ main section > h2 {
 
 .cta {
   display: inline-block;
+  white-space: nowrap;
   font-weight: 700;
   font-size: 16px;
   padding: 14px 30px;
